@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6558AD71-83D9-4061-B987-C51E47D5D6C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaDeInventarioOD</RootNamespace>
+    <AssemblyName>SistemaDeInventarioOD</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Proveedor.cs" />
+    <Compile Include="Vistas\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Opciones\ClientesOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ClientesOpcion.Designer.cs">
+      <DependentUpon>ClientesOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ComprasOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ComprasOpcion.Designer.cs">
+      <DependentUpon>ComprasOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ConfiguracionOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ConfiguracionOpcion.Designer.cs">
+      <DependentUpon>ConfiguracionOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\InventarioOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\InventarioOpcion.Designer.cs">
+      <DependentUpon>InventarioOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ProductosOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ProductosOpcion.Designer.cs">
+      <DependentUpon>ProductosOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ProveedoresOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\ProveedoresOpcion.Designer.cs">
+      <DependentUpon>ProveedoresOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\Secundarias\BuscarAlmacenSecundaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\Secundarias\BuscarAlmacenSecundaria.Designer.cs">
+      <DependentUpon>BuscarAlmacenSecundaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\VentasOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\VentasOpcion.Designer.cs">
+      <DependentUpon>VentasOpcion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\ClientesOpcion.resx">
+      <DependentUpon>ClientesOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\ComprasOpcion.resx">
+      <DependentUpon>ComprasOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\ConfiguracionOpcion.resx">
+      <DependentUpon>ConfiguracionOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\InventarioOpcion.resx">
+      <DependentUpon>InventarioOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\ProductosOpcion.resx">
+      <DependentUpon>ProductosOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Vistas\Opciones\ProveedoresOpcion.resx">
+      <DependentUpon>ProveedoresOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\VentasOpcion.resx">
+      <DependentUpon>VentasOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-97890_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil-del-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emergency-exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo-producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\objetivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuraciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paquetes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iniciar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpiar %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
