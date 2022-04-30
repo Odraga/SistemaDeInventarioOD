@@ -41,7 +41,17 @@ namespace SistemaDeInventarioOD.Resources
             Administrador administrador = new Administrador();
             productos = administrador.VerProductos();
 
-            dgvProductos.DataSource = productos;
+            dgvProductos.Rows.Clear();
+
+            foreach (var item in productos)
+            {
+                dgvProductos.Rows.Add(item.IdProducto,
+                    item.Categoria,
+                    item.Almacen,
+                    item.Codigo,
+                    item.Descripcion);
+            }
+            
         }
         private void CargarDatosCategorias()
         {
@@ -166,10 +176,8 @@ namespace SistemaDeInventarioOD.Resources
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             productosBusqueda.Clear();
-            //dgvProductos.Rows.Clear();
-
-            //if (!string.IsNullOrEmpty(cbBuscarPor.Text) && !string.IsNullOrEmpty(txtBuscar.Text))
-            //{
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            {
                 if (cbBuscarPor.Text == "Codigo")
                 {
                     foreach (var producto in productos)
@@ -178,8 +186,24 @@ namespace SistemaDeInventarioOD.Resources
                         {
                             productosBusqueda.Add(producto);
                         }
+                        else if (producto.Codigo.Contains(txtBuscar.Text) && producto.Categoria.Contains(cbBuscarCategoria.Text))
+                        {
+                            productosBusqueda.Add(producto);
+                        }
+                        else if (producto.Codigo.Contains(txtBuscar.Text) && producto.Categoria.Contains(cbBuscarCategoria.Text) && producto.Almacen.Contains(cbBuscarAlmacen.Text))
+                        {
+                            productosBusqueda.Add(producto);
+                        }
                     }
-                    dgvProductos.DataSource = productosBusqueda;
+                    dgvProductos.Rows.Clear();
+                    foreach (var item in productosBusqueda)
+                    {
+                        dgvProductos.Rows.Add(item.IdProducto,
+                            item.Categoria,
+                            item.Almacen,
+                            item.Codigo,
+                            item.Descripcion);
+                    }
                 }
                 else if (cbBuscarPor.Text == "Categoria")
                 {
@@ -192,12 +216,25 @@ namespace SistemaDeInventarioOD.Resources
                                 productosBusqueda.Add(producto);
                             }
                         }
+                        dgvProductos.Rows.Clear();
+                        foreach (var item in productosBusqueda)
+                        {
+                            dgvProductos.Rows.Add(item.IdProducto,
+                                item.Categoria,
+                                item.Almacen,
+                                item.Codigo,
+                                item.Descripcion);
+                        }
                     }
                     else
                     {
                         foreach (var producto in productos)
                         {
-                            if (producto.Categoria == cbBuscarCategoria.Text && producto.Codigo.Contains(txtBuscar.Text))
+                            if (producto.Categoria == cbBuscarCategoria.Text)
+                            {
+                                productosBusqueda.Add(producto);
+                            }
+                            else if(producto.Categoria == cbBuscarCategoria.Text && producto.Codigo.Contains(txtBuscar.Text))
                             {
                                 productosBusqueda.Add(producto);
                             }
@@ -206,8 +243,16 @@ namespace SistemaDeInventarioOD.Resources
                                 productosBusqueda.Add(producto);
                             }
                         }
+                        dgvProductos.Rows.Clear();
+                        foreach (var item in productosBusqueda)
+                        {
+                            dgvProductos.Rows.Add(item.IdProducto,
+                                item.Categoria,
+                                item.Almacen,
+                                item.Codigo,
+                                item.Descripcion);
+                        }
                     }
-                    dgvProductos.DataSource = productosBusqueda;
                 }
                 else if (cbBuscarPor.Text == "Almacen")
                 {
@@ -222,13 +267,21 @@ namespace SistemaDeInventarioOD.Resources
                             productosBusqueda.Add(producto);
                         }
                     }
-                    dgvProductos.DataSource = productosBusqueda;
+                    dgvProductos.Rows.Clear();
+                    foreach (var item in productosBusqueda)
+                    {
+                        dgvProductos.Rows.Add(item.IdProducto,
+                            item.Categoria,
+                            item.Almacen,
+                            item.Codigo,
+                            item.Descripcion);
+                    }
                 }
-            //}
-            //else
-            //{
-            //    CargarDatosProductos();
-            //}
+                else
+                {
+                    CargarDatosProductos();
+                }
+            }
         }
 
         private void btnLimpiarBuscar_Click(object sender, EventArgs e)
