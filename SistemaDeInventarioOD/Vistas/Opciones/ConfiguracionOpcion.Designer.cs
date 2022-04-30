@@ -277,6 +277,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.btnVerUsuarios.TabIndex = 25;
             this.btnVerUsuarios.Text = "Ver Usuarios";
             this.btnVerUsuarios.UseVisualStyleBackColor = false;
+            this.btnVerUsuarios.Click += new System.EventHandler(this.btnVerUsuarios_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -444,7 +445,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(608, 465);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelSuperior);

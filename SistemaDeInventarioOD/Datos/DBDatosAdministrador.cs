@@ -142,6 +142,41 @@ namespace SistemaDeInventarioOD.Datos
             return almacenes;
         }
 
+        protected List<Usuario> TraerUsuarios()
+        {
+            MySqlDataReader reader;
+
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            conn.Open();
+
+            string query = "SELECT * FROM usuario;";
+
+            MySqlCommand comando = new MySqlCommand(query, conn);
+
+            reader = comando.ExecuteReader();
+
+            List<Usuario> usuarios = new List<Usuario>();
+
+            while (reader.Read())
+            {
+                usuarios.Add(new Usuario()
+                {
+                    IdUsuario = (int)reader["id_usuario"],
+                    IdNivelUsuario = (int)reader["id_nivel_usuario"],
+                    NivelUsuario = (int)reader["id_nivel_usuario"] == 1 ? "Administrador" : "Vendedor",
+                    NombreUsuario = reader["nombre_usuario"].ToString(),
+                    NombreCompleto = reader["nombre_completo"].ToString(),
+                    Identificacion = reader["identificacion"].ToString(),
+                    Clave = reader["clave"].ToString()
+            });
+            }
+
+            conn.Close();
+
+            return usuarios;
+        }
+
         protected int AgregarCliente(Cliente cliente)
         {
             MySqlConnection conn = new MySqlConnection(conexion);

@@ -1,6 +1,7 @@
 ﻿using SistemaDeInventarioOD.Controller;
 using SistemaDeInventarioOD.Datos;
 using SistemaDeInventarioOD.Models;
+using SistemaDeInventarioOD.Vistas.Opciones.Secundarias;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -147,6 +148,12 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             {
                 MessageBox.Show("No tiene el nivel suficiente para hacer está Acción!");
             }
+        }
+
+        private void btnVerUsuarios_Click(object sender, EventArgs e)
+        {
+            BuscarUsuarioSecundaria buscarUsuarioSecundaria = new BuscarUsuarioSecundaria();
+            buscarUsuarioSecundaria.ShowDialog();
         }
     }
 }

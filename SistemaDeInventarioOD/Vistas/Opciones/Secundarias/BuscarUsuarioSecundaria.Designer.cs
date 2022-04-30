@@ -37,6 +37,12 @@ namespace SistemaDeInventarioOD.Vistas.Opciones.Secundarias
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panelSuperior.SuspendLayout();
@@ -82,6 +88,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones.Secundarias
             this.btnBuscar.Size = new System.Drawing.Size(28, 23);
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiarBuscar
             // 
@@ -94,11 +101,21 @@ namespace SistemaDeInventarioOD.Vistas.Opciones.Secundarias
             this.btnLimpiarBuscar.Size = new System.Drawing.Size(28, 23);
             this.btnLimpiarBuscar.TabIndex = 22;
             this.btnLimpiarBuscar.UseVisualStyleBackColor = false;
+            this.btnLimpiarBuscar.Click += new System.EventHandler(this.btnLimpiarBuscar_Click);
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 104);
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dgvUsuarios.Location = new System.Drawing.Point(12, 105);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.Size = new System.Drawing.Size(472, 444);
@@ -119,11 +136,47 @@ namespace SistemaDeInventarioOD.Vistas.Opciones.Secundarias
             this.lblTitulo.BackColor = System.Drawing.Color.Navy;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(143, 8);
+            this.lblTitulo.Location = new System.Drawing.Point(178, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(207, 37);
+            this.lblTitulo.Size = new System.Drawing.Size(152, 37);
             this.lblTitulo.TabIndex = 32;
-            this.lblTitulo.Text = "Proveedores";
+            this.lblTitulo.Text = "Usuarios";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Id Usuario";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nivel de Usuario";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Nombre Usuario";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Nombre Completo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Identificacion";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Clave";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // BuscarUsuarioSecundaria
             // 
@@ -159,5 +212,11 @@ namespace SistemaDeInventarioOD.Vistas.Opciones.Secundarias
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Panel panelSuperior;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

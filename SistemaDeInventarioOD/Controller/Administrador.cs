@@ -46,6 +46,15 @@ namespace SistemaDeInventarioOD.Controller
             return almacenes;
         }
 
+        public List<Usuario> VerUsuarios()
+        {
+            List<Usuario> Usuarios = new List<Usuario>();
+
+            Usuarios = TraerUsuarios();
+
+            return Usuarios;
+        }
+
         public string NuevoCliente(Cliente cliente)
         {
             string Mensaje;
