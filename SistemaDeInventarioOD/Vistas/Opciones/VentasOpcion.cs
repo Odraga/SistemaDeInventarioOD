@@ -21,5 +21,15 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
         {
 
         }
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void VentasOpcion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

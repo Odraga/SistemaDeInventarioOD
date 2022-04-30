@@ -1,23 +1,25 @@
-﻿using SistemaDeInventarioOD.Resources;
+﻿using SistemaDeInventarioOD.Models;
+using SistemaDeInventarioOD.Resources;
 using SistemaDeInventarioOD.Vistas.Opciones;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaDeInventarioOD
 {
     public partial class MenuPrincipal : Form
     {
+        private static Usuario usuario = new Usuario();
+
         public MenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        public void NuevoLogueo(dynamic usu)
+        {
+            usuario = usu;
+            lblTitulo.Text = "Bienvenido "+ usuario.NombreCompleto;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -28,9 +30,11 @@ namespace SistemaDeInventarioOD
         private void btnProducto_Click(object sender, EventArgs e)
         {
             ProductosOpcion productosOpcion = new ProductosOpcion();
-
+            productosOpcion.DatosUsuario(usuario);
             productosOpcion.ShowDialog();
         }
+
+        
 
         private void btnCerrarSession_Click(object sender, EventArgs e)
         {
@@ -72,13 +76,21 @@ namespace SistemaDeInventarioOD
         private void btnClientes_Click(object sender, EventArgs e)
         {
             ClientesOpcion clientesOpcion = new ClientesOpcion();
+            clientesOpcion.DatosUsuario(usuario);
             clientesOpcion.ShowDialog();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             ProveedoresOpcion proveedoresOpcion = new ProveedoresOpcion();
+            proveedoresOpcion.DatosUsuario(usuario);
             proveedoresOpcion.ShowDialog();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            VentasOpcion ventasOpcion = new VentasOpcion();
+            ventasOpcion.ShowDialog();
         }
     }
 }

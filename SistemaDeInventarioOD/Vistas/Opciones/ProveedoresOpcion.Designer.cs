@@ -32,11 +32,11 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnVolverMenu = new System.Windows.Forms.Button();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbBuscarPor = new System.Windows.Forms.ComboBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiarBuscar = new System.Windows.Forms.Button();
             this.lblListaClientes = new System.Windows.Forms.Label();
@@ -53,11 +53,11 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.panelSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -99,19 +99,19 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.btnVolverMenu.UseVisualStyleBackColor = false;
             this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
-            // dgvClientes
+            // dgvProveedores
             // 
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(243, 141);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(765, 447);
-            this.dgvClientes.TabIndex = 33;
+            this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProveedores.Location = new System.Drawing.Point(243, 141);
+            this.dgvProveedores.Name = "dgvProveedores";
+            this.dgvProveedores.Size = new System.Drawing.Size(765, 447);
+            this.dgvProveedores.TabIndex = 33;
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.label2);
-            this.flowLayoutPanel3.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.cbBuscarPor);
+            this.flowLayoutPanel3.Controls.Add(this.txtBuscar);
             this.flowLayoutPanel3.Controls.Add(this.btnBuscar);
             this.flowLayoutPanel3.Controls.Add(this.btnLimpiarBuscar);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(515, 108);
@@ -130,26 +130,27 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.label2.TabIndex = 18;
             this.label2.Text = "Bucar por:";
             // 
-            // comboBox1
+            // cbBuscarPor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbBuscarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscarPor.FormattingEnabled = true;
+            this.cbBuscarPor.Items.AddRange(new object[] {
             "Nombre",
             "Identificacion",
             "Telefono",
-            "Celular",
+            "Direccion",
             "Correo"});
-            this.comboBox1.Location = new System.Drawing.Point(75, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 19;
+            this.cbBuscarPor.Location = new System.Drawing.Point(75, 3);
+            this.cbBuscarPor.Name = "cbBuscarPor";
+            this.cbBuscarPor.Size = new System.Drawing.Size(121, 21);
+            this.cbBuscarPor.TabIndex = 19;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(202, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtBuscar.Location = new System.Drawing.Point(202, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(218, 20);
+            this.txtBuscar.TabIndex = 20;
             // 
             // btnBuscar
             // 
@@ -162,6 +163,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.btnBuscar.Size = new System.Drawing.Size(28, 23);
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiarBuscar
             // 
@@ -174,6 +176,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.btnLimpiarBuscar.Size = new System.Drawing.Size(28, 23);
             this.btnLimpiarBuscar.TabIndex = 22;
             this.btnLimpiarBuscar.UseVisualStyleBackColor = false;
+            this.btnLimpiarBuscar.Click += new System.EventHandler(this.btnLimpiarBuscar_Click);
             // 
             // lblListaClientes
             // 
@@ -222,6 +225,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -254,6 +258,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -264,7 +269,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.flowLayoutPanel1.Controls.Add(this.lblTelefono);
             this.flowLayoutPanel1.Controls.Add(this.txtTelefono);
             this.flowLayoutPanel1.Controls.Add(this.lblDireccion);
-            this.flowLayoutPanel1.Controls.Add(this.txtCelular);
+            this.flowLayoutPanel1.Controls.Add(this.txtDireccion);
             this.flowLayoutPanel1.Controls.Add(this.lblCorreo);
             this.flowLayoutPanel1.Controls.Add(this.txtCorreo);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 122);
@@ -337,12 +342,12 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.lblDireccion.TabIndex = 16;
             this.lblDireccion.Text = "Direccion:";
             // 
-            // txtCelular
+            // txtDireccion
             // 
-            this.txtCelular.Location = new System.Drawing.Point(3, 133);
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(218, 20);
-            this.txtCelular.TabIndex = 19;
+            this.txtDireccion.Location = new System.Drawing.Point(3, 133);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(218, 20);
+            this.txtDireccion.TabIndex = 19;
             // 
             // lblCorreo
             // 
@@ -368,7 +373,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -381,7 +386,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.Text = "Proveedores";
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -397,11 +402,11 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
         private System.Windows.Forms.Panel panelSuperior;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnVolverMenu;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvProveedores;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbBuscarPor;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiarBuscar;
         private System.Windows.Forms.Label lblListaClientes;
@@ -418,7 +423,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCorreo;
     }

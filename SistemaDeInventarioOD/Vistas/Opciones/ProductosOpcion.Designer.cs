@@ -31,30 +31,32 @@ namespace SistemaDeInventarioOD.Resources
         {
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.lblAlmacen = new System.Windows.Forms.Label();
+            this.txtAlmacen = new System.Windows.Forms.TextBox();
             this.lblDatosProducto = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.lblProductos = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbBuscarPor = new System.Windows.Forms.ComboBox();
+            this.cbBuscarCategoria = new System.Windows.Forms.ComboBox();
+            this.cbBuscarAlmacen = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiarBuscar = new System.Windows.Forms.Button();
-            this.txtAlmacen = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscarAlmacen = new System.Windows.Forms.Button();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.panelSuperior.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -85,19 +87,6 @@ namespace SistemaDeInventarioOD.Resources
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Productos";
             this.lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseDown);
-            // 
-            // btnVolverMenu
-            // 
-            this.btnVolverMenu.BackColor = System.Drawing.Color.Navy;
-            this.btnVolverMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVolverMenu.Image = global::SistemaDeInventarioOD.Properties.Resources.previous;
-            this.btnVolverMenu.Location = new System.Drawing.Point(14, 13);
-            this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(64, 64);
-            this.btnVolverMenu.TabIndex = 5;
-            this.btnVolverMenu.UseVisualStyleBackColor = false;
-            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -162,6 +151,15 @@ namespace SistemaDeInventarioOD.Resources
             this.lblCategoria.TabIndex = 14;
             this.lblCategoria.Text = "Categoria:";
             // 
+            // cbCategoria
+            // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(3, 94);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(215, 21);
+            this.cbCategoria.TabIndex = 26;
+            // 
             // lblAlmacen
             // 
             this.lblAlmacen.AutoSize = true;
@@ -172,6 +170,13 @@ namespace SistemaDeInventarioOD.Resources
             this.lblAlmacen.Size = new System.Drawing.Size(59, 13);
             this.lblAlmacen.TabIndex = 16;
             this.lblAlmacen.Text = "Almacen:";
+            // 
+            // txtAlmacen
+            // 
+            this.txtAlmacen.Location = new System.Drawing.Point(3, 134);
+            this.txtAlmacen.Name = "txtAlmacen";
+            this.txtAlmacen.Size = new System.Drawing.Size(177, 20);
+            this.txtAlmacen.TabIndex = 25;
             // 
             // lblDatosProducto
             // 
@@ -194,6 +199,113 @@ namespace SistemaDeInventarioOD.Resources
             this.flowLayoutPanel2.Size = new System.Drawing.Size(173, 236);
             this.flowLayoutPanel2.TabIndex = 10;
             // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(238, 162);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(774, 426);
+            this.dgvProductos.TabIndex = 11;
+            // 
+            // lblProductos
+            // 
+            this.lblProductos.AutoSize = true;
+            this.lblProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductos.ForeColor = System.Drawing.Color.White;
+            this.lblProductos.Location = new System.Drawing.Point(234, 98);
+            this.lblProductos.Name = "lblProductos";
+            this.lblProductos.Size = new System.Drawing.Size(152, 24);
+            this.lblProductos.TabIndex = 12;
+            this.lblProductos.Text = "Lista Productos";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label2);
+            this.flowLayoutPanel3.Controls.Add(this.cbBuscarPor);
+            this.flowLayoutPanel3.Controls.Add(this.cbBuscarCategoria);
+            this.flowLayoutPanel3.Controls.Add(this.cbBuscarAlmacen);
+            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.btnBuscar);
+            this.flowLayoutPanel3.Controls.Add(this.btnLimpiarBuscar);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(238, 125);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(770, 31);
+            this.flowLayoutPanel3.TabIndex = 24;
+            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Bucar por:";
+            // 
+            // cbBuscarPor
+            // 
+            this.cbBuscarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscarPor.FormattingEnabled = true;
+            this.cbBuscarPor.Items.AddRange(new object[] {
+            "Codigo",
+            "Categoria",
+            "Almacen"});
+            this.cbBuscarPor.Location = new System.Drawing.Point(75, 3);
+            this.cbBuscarPor.Name = "cbBuscarPor";
+            this.cbBuscarPor.Size = new System.Drawing.Size(121, 21);
+            this.cbBuscarPor.TabIndex = 19;
+            // 
+            // cbBuscarCategoria
+            // 
+            this.cbBuscarCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscarCategoria.FormattingEnabled = true;
+            this.cbBuscarCategoria.Location = new System.Drawing.Point(202, 3);
+            this.cbBuscarCategoria.Name = "cbBuscarCategoria";
+            this.cbBuscarCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cbBuscarCategoria.TabIndex = 23;
+            // 
+            // cbBuscarAlmacen
+            // 
+            this.cbBuscarAlmacen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscarAlmacen.FormattingEnabled = true;
+            this.cbBuscarAlmacen.Location = new System.Drawing.Point(329, 3);
+            this.cbBuscarAlmacen.Name = "cbBuscarAlmacen";
+            this.cbBuscarAlmacen.Size = new System.Drawing.Size(121, 21);
+            this.cbBuscarAlmacen.TabIndex = 24;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(456, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(218, 20);
+            this.textBox1.TabIndex = 20;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.Image = global::SistemaDeInventarioOD.Properties.Resources.lupa__1_;
+            this.btnBuscar.Location = new System.Drawing.Point(680, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(28, 23);
+            this.btnBuscar.TabIndex = 21;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiarBuscar
+            // 
+            this.btnLimpiarBuscar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLimpiarBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiarBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpiarBuscar.Image = global::SistemaDeInventarioOD.Properties.Resources.limpiar__1_;
+            this.btnLimpiarBuscar.Location = new System.Drawing.Point(714, 3);
+            this.btnLimpiarBuscar.Name = "btnLimpiarBuscar";
+            this.btnLimpiarBuscar.Size = new System.Drawing.Size(28, 23);
+            this.btnLimpiarBuscar.TabIndex = 22;
+            this.btnLimpiarBuscar.UseVisualStyleBackColor = false;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue;
@@ -209,6 +321,7 @@ namespace SistemaDeInventarioOD.Resources
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -242,118 +355,31 @@ namespace SistemaDeInventarioOD.Resources
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // dgvProductos
-            // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(238, 137);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(774, 451);
-            this.dgvProductos.TabIndex = 11;
-            // 
-            // lblProductos
-            // 
-            this.lblProductos.AutoSize = true;
-            this.lblProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductos.ForeColor = System.Drawing.Color.White;
-            this.lblProductos.Location = new System.Drawing.Point(235, 110);
-            this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(152, 24);
-            this.lblProductos.TabIndex = 12;
-            this.lblProductos.Text = "Lista Productos";
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label2);
-            this.flowLayoutPanel3.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
-            this.flowLayoutPanel3.Controls.Add(this.btnBuscar);
-            this.flowLayoutPanel3.Controls.Add(this.btnLimpiarBuscar);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(519, 105);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(493, 29);
-            this.flowLayoutPanel3.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Bucar por:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Codigo",
-            "Categoria",
-            "Almacen"});
-            this.comboBox1.Location = new System.Drawing.Point(75, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 19;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(202, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 20;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Image = global::SistemaDeInventarioOD.Properties.Resources.lupa__1_;
-            this.btnBuscar.Location = new System.Drawing.Point(426, 3);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(28, 23);
-            this.btnBuscar.TabIndex = 21;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiarBuscar
-            // 
-            this.btnLimpiarBuscar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLimpiarBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiarBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiarBuscar.Image = global::SistemaDeInventarioOD.Properties.Resources.limpiar__1_;
-            this.btnLimpiarBuscar.Location = new System.Drawing.Point(460, 3);
-            this.btnLimpiarBuscar.Name = "btnLimpiarBuscar";
-            this.btnLimpiarBuscar.Size = new System.Drawing.Size(28, 23);
-            this.btnLimpiarBuscar.TabIndex = 22;
-            this.btnLimpiarBuscar.UseVisualStyleBackColor = false;
-            // 
-            // txtAlmacen
-            // 
-            this.txtAlmacen.Location = new System.Drawing.Point(3, 134);
-            this.txtAlmacen.Name = "txtAlmacen";
-            this.txtAlmacen.ReadOnly = true;
-            this.txtAlmacen.Size = new System.Drawing.Size(176, 20);
-            this.txtAlmacen.TabIndex = 25;
-            // 
             // btnBuscarAlmacen
             // 
             this.btnBuscarAlmacen.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnBuscarAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarAlmacen.Image = global::SistemaDeInventarioOD.Properties.Resources.lupa__1_;
-            this.btnBuscarAlmacen.Location = new System.Drawing.Point(185, 134);
+            this.btnBuscarAlmacen.Image = global::SistemaDeInventarioOD.Properties.Resources.mas__1_;
+            this.btnBuscarAlmacen.Location = new System.Drawing.Point(186, 134);
             this.btnBuscarAlmacen.Name = "btnBuscarAlmacen";
             this.btnBuscarAlmacen.Size = new System.Drawing.Size(28, 23);
             this.btnBuscarAlmacen.TabIndex = 24;
             this.btnBuscarAlmacen.UseVisualStyleBackColor = false;
+            this.btnBuscarAlmacen.Click += new System.EventHandler(this.btnBuscarAlmacen_Click);
             // 
-            // cbCategoria
+            // btnVolverMenu
             // 
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(3, 94);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(215, 21);
-            this.cbCategoria.TabIndex = 26;
+            this.btnVolverMenu.BackColor = System.Drawing.Color.Navy;
+            this.btnVolverMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVolverMenu.Image = global::SistemaDeInventarioOD.Properties.Resources.previous;
+            this.btnVolverMenu.Location = new System.Drawing.Point(14, 13);
+            this.btnVolverMenu.Name = "btnVolverMenu";
+            this.btnVolverMenu.Size = new System.Drawing.Size(64, 64);
+            this.btnVolverMenu.TabIndex = 5;
+            this.btnVolverMenu.UseVisualStyleBackColor = false;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
             // ProductosOpcion
             // 
@@ -407,12 +433,14 @@ namespace SistemaDeInventarioOD.Resources
         private System.Windows.Forms.Label lblProductos;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbBuscarPor;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiarBuscar;
         private System.Windows.Forms.TextBox txtAlmacen;
         private System.Windows.Forms.Button btnBuscarAlmacen;
         private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.ComboBox cbBuscarCategoria;
+        private System.Windows.Forms.ComboBox cbBuscarAlmacen;
     }
 }

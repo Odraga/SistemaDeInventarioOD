@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaDeInventarioOD.Controller;
+using SistemaDeInventarioOD.Models;
+using System;
 using System.Windows.Forms;
 
 namespace SistemaDeInventarioOD
@@ -27,9 +29,22 @@ namespace SistemaDeInventarioOD
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            MenuPrincipal menuPrincipal = new MenuPrincipal();
-            menuPrincipal.Show();
-            this.Hide();
+            Usuario usuario = new Usuario();
+            Loguear loguear = new Loguear();
+            usuario = loguear.Logueando(txtUsuario.Text, txtContrasenia.Text);
+
+            if (usuario.ContieneDatos)
+            {
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.NuevoLogueo(usuario);
+                menuPrincipal.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("¡Ocurrio un error al intentar Iniciar Sesion!\nVerifique su Usuario u Contraseña.");
+            }
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

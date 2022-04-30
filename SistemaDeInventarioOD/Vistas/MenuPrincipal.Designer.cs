@@ -30,9 +30,10 @@ namespace SistemaDeInventarioOD
         private void InitializeComponent()
         {
             this.panelSuperior = new System.Windows.Forms.Panel();
+            this.btnCerrarSession = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnInfo = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnProducto = new System.Windows.Forms.Button();
@@ -40,8 +41,7 @@ namespace SistemaDeInventarioOD
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.btnCerrarSession = new System.Windows.Forms.Button();
-            this.btnInfo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSuperior.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,17 +58,42 @@ namespace SistemaDeInventarioOD
             this.panelSuperior.TabIndex = 0;
             this.panelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
             // 
+            // btnCerrarSession
+            // 
+            this.btnCerrarSession.BackColor = System.Drawing.Color.Navy;
+            this.btnCerrarSession.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSession.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrarSession.Image = global::SistemaDeInventarioOD.Properties.Resources.cross;
+            this.btnCerrarSession.Location = new System.Drawing.Point(594, 13);
+            this.btnCerrarSession.Name = "btnCerrarSession";
+            this.btnCerrarSession.Size = new System.Drawing.Size(64, 64);
+            this.btnCerrarSession.TabIndex = 6;
+            this.btnCerrarSession.UseVisualStyleBackColor = false;
+            this.btnCerrarSession.Click += new System.EventHandler(this.btnCerrarSession_Click);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(177, 13);
+            this.lblTitulo.Location = new System.Drawing.Point(135, 23);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(333, 55);
+            this.lblTitulo.Size = new System.Drawing.Size(92, 33);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Inventario OD";
+            this.lblTitulo.Text = "name";
             this.lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseDown);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.BackColor = System.Drawing.Color.Navy;
+            this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInfo.Image = global::SistemaDeInventarioOD.Properties.Resources.info1;
+            this.btnInfo.Location = new System.Drawing.Point(14, 13);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(64, 64);
+            this.btnInfo.TabIndex = 5;
+            this.btnInfo.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel1
             // 
@@ -83,15 +108,6 @@ namespace SistemaDeInventarioOD
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(395, 395);
             this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 498);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Todos los derechos reservados ©";
             // 
             // btnCompras
             // 
@@ -123,6 +139,7 @@ namespace SistemaDeInventarioOD
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentas.UseVisualStyleBackColor = false;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnProducto
             // 
@@ -203,30 +220,14 @@ namespace SistemaDeInventarioOD
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfiguracion.UseVisualStyleBackColor = false;
             // 
-            // btnCerrarSession
+            // label1
             // 
-            this.btnCerrarSession.BackColor = System.Drawing.Color.Navy;
-            this.btnCerrarSession.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSession.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCerrarSession.Image = global::SistemaDeInventarioOD.Properties.Resources.cross;
-            this.btnCerrarSession.Location = new System.Drawing.Point(594, 13);
-            this.btnCerrarSession.Name = "btnCerrarSession";
-            this.btnCerrarSession.Size = new System.Drawing.Size(64, 64);
-            this.btnCerrarSession.TabIndex = 6;
-            this.btnCerrarSession.UseVisualStyleBackColor = false;
-            this.btnCerrarSession.Click += new System.EventHandler(this.btnCerrarSession_Click);
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.BackColor = System.Drawing.Color.Navy;
-            this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInfo.Image = global::SistemaDeInventarioOD.Properties.Resources.info1;
-            this.btnInfo.Location = new System.Drawing.Point(14, 13);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(64, 64);
-            this.btnInfo.TabIndex = 5;
-            this.btnInfo.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(256, 498);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Todos los derechos reservados ©";
             // 
             // MenuPrincipal
             // 
