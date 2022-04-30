@@ -30,7 +30,7 @@ namespace SistemaDeInventarioOD.Resources
 
             CargarDatosCategorias();
 
-            CargarAlmacenes();
+            CargarDatosAlmacenes();
         }
         public void DatosUsuario(dynamic usu)
         {
@@ -56,7 +56,7 @@ namespace SistemaDeInventarioOD.Resources
             }
             
         }
-        private void CargarAlmacenes()
+        private void CargarDatosAlmacenes()
         {
             Administrador administrador = new Administrador();
             almacenes = administrador.VerAlmacenes();

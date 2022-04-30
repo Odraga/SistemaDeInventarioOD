@@ -94,6 +94,7 @@ namespace SistemaDeInventarioOD
             this.btnInfo.Size = new System.Drawing.Size(64, 64);
             this.btnInfo.TabIndex = 5;
             this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // flowLayoutPanel1
             // 

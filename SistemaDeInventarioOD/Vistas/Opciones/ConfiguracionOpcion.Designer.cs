@@ -42,21 +42,30 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbVendedor = new System.Windows.Forms.RadioButton();
+            this.rbAdministrador = new System.Windows.Forms.RadioButton();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
+            this.btnVerUsuarios = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbCategorias = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAlmacen = new System.Windows.Forms.TextBox();
+            this.btnAgregarAlmacen = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbAlmacenes = new System.Windows.Forms.ComboBox();
             this.panelSuperior.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSuperior
@@ -66,7 +75,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.panelSuperior.Controls.Add(this.btnVolverMenu);
             this.panelSuperior.Location = new System.Drawing.Point(-1, 0);
             this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(1027, 89);
+            this.panelSuperior.Size = new System.Drawing.Size(609, 89);
             this.panelSuperior.TabIndex = 2;
             this.panelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
             // 
@@ -75,7 +84,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(393, 13);
+            this.lblTitulo.Location = new System.Drawing.Point(114, 22);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(334, 55);
             this.lblTitulo.TabIndex = 0;
@@ -109,10 +118,11 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.flowLayoutPanel1.Controls.Add(this.label4);
             this.flowLayoutPanel1.Controls.Add(this.txtClave);
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Controls.Add(this.btnIngresar);
+            this.flowLayoutPanel1.Controls.Add(this.btnAgregarUsuario);
+            this.flowLayoutPanel1.Controls.Add(this.btnVerUsuarios);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(273, 298);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(273, 352);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // label1
@@ -200,19 +210,73 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.txtClave.Size = new System.Drawing.Size(261, 20);
             this.txtClave.TabIndex = 18;
             // 
-            // btnIngresar
+            // groupBox1
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnIngresar.Location = new System.Drawing.Point(3, 252);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(261, 33);
-            this.btnIngresar.TabIndex = 21;
-            this.btnIngresar.Text = "Agregar";
-            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.groupBox1.Controls.Add(this.rbVendedor);
+            this.groupBox1.Controls.Add(this.rbAdministrador);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkGray;
+            this.groupBox1.Location = new System.Drawing.Point(3, 200);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(261, 46);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Nivel de Usuario";
+            // 
+            // rbVendedor
+            // 
+            this.rbVendedor.AutoSize = true;
+            this.rbVendedor.Checked = true;
+            this.rbVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.rbVendedor.ForeColor = System.Drawing.Color.White;
+            this.rbVendedor.Location = new System.Drawing.Point(176, 19);
+            this.rbVendedor.Name = "rbVendedor";
+            this.rbVendedor.Size = new System.Drawing.Size(79, 17);
+            this.rbVendedor.TabIndex = 23;
+            this.rbVendedor.TabStop = true;
+            this.rbVendedor.Text = "Vendedor";
+            this.rbVendedor.UseVisualStyleBackColor = true;
+            // 
+            // rbAdministrador
+            // 
+            this.rbAdministrador.AutoSize = true;
+            this.rbAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.rbAdministrador.ForeColor = System.Drawing.Color.White;
+            this.rbAdministrador.Location = new System.Drawing.Point(6, 19);
+            this.rbAdministrador.Name = "rbAdministrador";
+            this.rbAdministrador.Size = new System.Drawing.Size(101, 17);
+            this.rbAdministrador.TabIndex = 22;
+            this.rbAdministrador.Text = "Administrador";
+            this.rbAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarUsuario
+            // 
+            this.btnAgregarUsuario.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAgregarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(3, 252);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(261, 33);
+            this.btnAgregarUsuario.TabIndex = 21;
+            this.btnAgregarUsuario.Text = "Agregar";
+            this.btnAgregarUsuario.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
+            // 
+            // btnVerUsuarios
+            // 
+            this.btnVerUsuarios.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnVerUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerUsuarios.Location = new System.Drawing.Point(3, 291);
+            this.btnVerUsuarios.Name = "btnVerUsuarios";
+            this.btnVerUsuarios.Size = new System.Drawing.Size(261, 33);
+            this.btnVerUsuarios.TabIndex = 25;
+            this.btnVerUsuarios.Text = "Ver Usuarios";
+            this.btnVerUsuarios.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel2
             // 
@@ -220,10 +284,10 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel2.Controls.Add(this.label6);
             this.flowLayoutPanel2.Controls.Add(this.label7);
-            this.flowLayoutPanel2.Controls.Add(this.textBox1);
-            this.flowLayoutPanel2.Controls.Add(this.button1);
+            this.flowLayoutPanel2.Controls.Add(this.txtCategoria);
+            this.flowLayoutPanel2.Controls.Add(this.btnAgregarCategoria);
             this.flowLayoutPanel2.Controls.Add(this.label11);
-            this.flowLayoutPanel2.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel2.Controls.Add(this.cbCategorias);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(292, 96);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(303, 173);
@@ -253,12 +317,27 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.label7.TabIndex = 11;
             this.label7.Text = "Categoria:";
             // 
-            // textBox1
+            // txtCategoria
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtCategoria.Location = new System.Drawing.Point(3, 57);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(293, 20);
+            this.txtCategoria.TabIndex = 12;
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAgregarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCategoria.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(3, 83);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(293, 33);
+            this.btnAgregarCategoria.TabIndex = 21;
+            this.btnAgregarCategoria.Text = "Agregar";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = false;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // label11
             // 
@@ -271,88 +350,122 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.label11.TabIndex = 19;
             this.label11.Text = "Lista Categorias:";
             // 
-            // comboBox1
+            // cbCategorias
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 135);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(261, 21);
-            this.comboBox1.TabIndex = 20;
+            this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategorias.FormattingEnabled = true;
+            this.cbCategorias.Location = new System.Drawing.Point(3, 135);
+            this.cbCategorias.Name = "cbCategorias";
+            this.cbCategorias.Size = new System.Drawing.Size(293, 21);
+            this.cbCategorias.TabIndex = 20;
             // 
-            // button1
+            // flowLayoutPanel3
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(3, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(261, 33);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.flowLayoutPanel3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel3.Controls.Add(this.label5);
+            this.flowLayoutPanel3.Controls.Add(this.label8);
+            this.flowLayoutPanel3.Controls.Add(this.txtAlmacen);
+            this.flowLayoutPanel3.Controls.Add(this.btnAgregarAlmacen);
+            this.flowLayoutPanel3.Controls.Add(this.label9);
+            this.flowLayoutPanel3.Controls.Add(this.cbAlmacenes);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(292, 275);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(303, 173);
+            this.flowLayoutPanel3.TabIndex = 23;
             // 
-            // radioButton1
+            // label5
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(101, 17);
-            this.radioButton1.TabIndex = 22;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Administrador";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(277, 41);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nuevo Almacen";
             // 
-            // radioButton2
+            // label8
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(176, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 23;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Vendedor";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Almacen:";
             // 
-            // groupBox1
+            // txtAlmacen
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox1.Location = new System.Drawing.Point(3, 200);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 46);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nivel de Usuario";
+            this.txtAlmacen.Location = new System.Drawing.Point(3, 57);
+            this.txtAlmacen.Name = "txtAlmacen";
+            this.txtAlmacen.Size = new System.Drawing.Size(293, 20);
+            this.txtAlmacen.TabIndex = 12;
+            // 
+            // btnAgregarAlmacen
+            // 
+            this.btnAgregarAlmacen.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAgregarAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAlmacen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregarAlmacen.Location = new System.Drawing.Point(3, 83);
+            this.btnAgregarAlmacen.Name = "btnAgregarAlmacen";
+            this.btnAgregarAlmacen.Size = new System.Drawing.Size(293, 33);
+            this.btnAgregarAlmacen.TabIndex = 21;
+            this.btnAgregarAlmacen.Text = "Agregar";
+            this.btnAgregarAlmacen.UseVisualStyleBackColor = false;
+            this.btnAgregarAlmacen.Click += new System.EventHandler(this.btnAgregarAlmacen_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 119);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(103, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Lista Almacenes:";
+            // 
+            // cbAlmacenes
+            // 
+            this.cbAlmacenes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAlmacenes.FormattingEnabled = true;
+            this.cbAlmacenes.Location = new System.Drawing.Point(3, 135);
+            this.cbAlmacenes.Name = "cbAlmacenes";
+            this.cbAlmacenes.Size = new System.Drawing.Size(293, 21);
+            this.cbAlmacenes.TabIndex = 20;
             // 
             // ConfiguracionOpcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.ClientSize = new System.Drawing.Size(608, 465);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(608, 465);
+            this.MinimumSize = new System.Drawing.Size(608, 465);
             this.Name = "ConfiguracionOpcion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfiguracionOpcion";
-            this.Load += new System.EventHandler(this.ConfiguracionOpcion_Load);
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -372,16 +485,24 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbVendedor;
+        private System.Windows.Forms.RadioButton rbAdministrador;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.Button btnAgregarCategoria;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCategorias;
+        private System.Windows.Forms.Button btnVerUsuarios;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtAlmacen;
+        private System.Windows.Forms.Button btnAgregarAlmacen;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbAlmacenes;
     }
 }

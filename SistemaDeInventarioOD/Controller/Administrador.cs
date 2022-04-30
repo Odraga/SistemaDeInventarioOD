@@ -142,5 +142,56 @@ namespace SistemaDeInventarioOD.Controller
             return Mensaje;
         }
 
+        public string NuevoUsuario(Usuario usuario)
+        {
+            string Mensaje;
+
+            if (string.IsNullOrEmpty(usuario.NombreCompleto) || string.IsNullOrEmpty(usuario.Identificacion) || string.IsNullOrEmpty(usuario.NombreUsuario) || string.IsNullOrEmpty(usuario.Clave))
+            {
+                Mensaje = "Oops! hubo un problema al agregar el nuevo Usuario!\nVerifique los campos.";
+            }
+            else
+            {
+                int resultado = AgregarUsuario(usuario);
+
+                if (resultado < 1)
+                {
+                    Mensaje = "Oops! hubo un problema al agregar el nuevo usuario!";
+                }
+                else
+                {
+                    Mensaje = "Se agrego el nuevo Usuario con exito!";
+                }
+
+            }
+
+            return Mensaje;
+        }
+
+        public string NuevoAlmacen(Almacen almacen)
+        {
+            string Mensaje;
+
+            if (string.IsNullOrEmpty(almacen.nombre_almacen))
+            {
+                Mensaje = "Oops! hubo un problema al agregar el nuevo Almacen!\nVerifique los campos.";
+            }
+            else
+            {
+                int resultado = AgregarAlmacen(almacen);
+
+                if (resultado < 1)
+                {
+                    Mensaje = "Oops! hubo un problema al agregar el nuevo Almacen!";
+                }
+                else
+                {
+                    Mensaje = "Se agrego el nuevo Almacen con exito!";
+                }
+
+            }
+
+            return Mensaje;
+        }
     }
 }

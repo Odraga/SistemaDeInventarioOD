@@ -97,7 +97,13 @@ namespace SistemaDeInventarioOD
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
             ConfiguracionOpcion configuracionOpcion = new ConfiguracionOpcion();
+            configuracionOpcion.DatosUsuario(usuario);
             configuracionOpcion.ShowDialog();
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hecho Por: Gabriel Vargas.\nFecha de Creacion: 29/04/2022 a las 4:30AM\nCorreo del Desarrollador: gabrielvr.dev@gmail.com");
         }
     }
 }

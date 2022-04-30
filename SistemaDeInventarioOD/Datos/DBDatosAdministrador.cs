@@ -241,5 +241,47 @@ namespace SistemaDeInventarioOD.Datos
 
             return resultado;
         }
+
+        protected int AgregarUsuario(Usuario usuario)
+        {
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            conn.Open();
+
+            string query = "INSERT INTO usuario (id_nivel_usuario, nombre_usuario, nombre_completo, identificacion, clave) VALUE (@idNivelUsuario, @nombreUsuario, @nombreCompleto, @identificacion, @clave);";
+
+            MySqlCommand comando = new MySqlCommand(query, conn);
+
+            comando.Parameters.AddWithValue("@idNivelUsuario", usuario.IdNivelUsuario);
+            comando.Parameters.AddWithValue("@nombreUsuario", usuario.NombreUsuario);
+            comando.Parameters.AddWithValue("@nombreCompleto", usuario.NombreCompleto);
+            comando.Parameters.AddWithValue("@identificacion", usuario.Identificacion);
+            comando.Parameters.AddWithValue("@clave", usuario.Clave);
+
+            int resultado = comando.ExecuteNonQuery();
+
+            conn.Close();
+
+            return resultado;
+        }
+
+        protected int AgregarAlmacen(Almacen almacen)
+        {
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            conn.Open();
+
+            string query = "INSERT INTO almacen (nombre_almacen) VALUE (@nombreAlmacen);";
+
+            MySqlCommand comando = new MySqlCommand(query, conn);
+
+            comando.Parameters.AddWithValue("@nombreAlmacen", almacen.nombre_almacen);
+
+            int resultado = comando.ExecuteNonQuery();
+
+            conn.Close();
+
+            return resultado;
+        }
     }
 }

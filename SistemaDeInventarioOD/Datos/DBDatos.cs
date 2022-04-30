@@ -76,5 +76,24 @@ namespace SistemaDeInventarioOD.Datos
             return categorias;
         }
 
+        public int NuevaCategoria(Categoria categoria)
+        {
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            conn.Open();
+
+            string query = "INSERT INTO categoria (descripcion) VALUE (@descripcion);";
+
+            MySqlCommand comando = new MySqlCommand(query, conn);
+
+            comando.Parameters.AddWithValue("@descripcion", categoria.Descripcion);
+
+            int resultado = comando.ExecuteNonQuery();
+
+            conn.Close();
+
+            return resultado;
+        }
+
     }
 }
