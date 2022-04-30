@@ -15,9 +15,11 @@ namespace SistemaDeInventarioOD.Resources
         private Almacen almacen = new Almacen();
 
         private List<Categoria> categorias = new List<Categoria>();
+        private List<Almacen> almacenes = new List<Almacen>();
 
         private static List<Producto> productos = new List<Producto>();
         private List<Producto> productosBusqueda = new List<Producto>();
+
 
         public ProductosOpcion()
         {
@@ -27,6 +29,8 @@ namespace SistemaDeInventarioOD.Resources
             CargarDatosProductos();
 
             CargarDatosCategorias();
+
+            CargarAlmacenes();
         }
         public void DatosUsuario(dynamic usu)
         {
@@ -51,6 +55,17 @@ namespace SistemaDeInventarioOD.Resources
                 cbCategoria.Items.Add(categoria.Descripcion);
             }
             
+        }
+        private void CargarAlmacenes()
+        {
+            Administrador administrador = new Administrador();
+            almacenes = administrador.VerAlmacenes();
+
+            foreach(var almacen in almacenes)
+            {
+                cbBuscarAlmacen.Items.Add(almacen.nombre_almacen);
+
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -104,10 +119,10 @@ namespace SistemaDeInventarioOD.Resources
                 }
 
                 producto.IdAlmacen = almacen.IdAlmacen;
-
+                
                 Administrador administrador = new Administrador();
 
-                string mensaje = "";// administrador.NuevoCliente(cliente);
+                string mensaje = administrador.NuevoProducto(producto);
 
                 MessageBox.Show(mensaje);
 
@@ -128,7 +143,98 @@ namespace SistemaDeInventarioOD.Resources
         {
             BuscarAlmacenSecundaria buscarAlmacenSecundaria = new BuscarAlmacenSecundaria();
 
-            buscarAlmacenSecundaria.ShowDialog();
+            if (buscarAlmacenSecundaria.ShowDialog() == DialogResult.OK)
+            {
+                this.almacen.IdAlmacen = buscarAlmacenSecundaria.IdAlmacen;
+                this.almacen.nombre_almacen = buscarAlmacenSecundaria.NombreAlmacen;
+
+                txtAlmacen.Text = buscarAlmacenSecundaria.NombreAlmacen;
+            }
+            
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtCodigo.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+        }
+        /*
+         * Codigo
+            Categoria
+            Almacen
+         */
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            productosBusqueda.Clear();
+            //dgvProductos.Rows.Clear();
+
+            //if (!string.IsNullOrEmpty(cbBuscarPor.Text) && !string.IsNullOrEmpty(txtBuscar.Text))
+            //{
+                if (cbBuscarPor.Text == "Codigo")
+                {
+                    foreach (var producto in productos)
+                    {
+                        if (producto.Codigo.Contains(txtBuscar.Text))
+                        {
+                            productosBusqueda.Add(producto);
+                        }
+                    }
+                    dgvProductos.DataSource = productosBusqueda;
+                }
+                else if (cbBuscarPor.Text == "Categoria")
+                {
+                    if (string.IsNullOrEmpty(txtBuscar.Text))
+                    {
+                        foreach (var producto in productos)
+                        {
+                            if (producto.Categoria == cbBuscarCategoria.Text)
+                            {
+                                productosBusqueda.Add(producto);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var producto in productos)
+                        {
+                            if (producto.Categoria == cbBuscarCategoria.Text && producto.Codigo.Contains(txtBuscar.Text))
+                            {
+                                productosBusqueda.Add(producto);
+                            }
+                            else if (producto.Categoria == cbBuscarCategoria.Text && producto.Descripcion.Contains(txtBuscar.Text))
+                            {
+                                productosBusqueda.Add(producto);
+                            }
+                        }
+                    }
+                    dgvProductos.DataSource = productosBusqueda;
+                }
+                else if (cbBuscarPor.Text == "Almacen")
+                {
+                    foreach (var producto in productos)
+                    {
+                        if (producto.Almacen == cbBuscarAlmacen.Text && producto.Codigo.Contains(txtBuscar.Text))
+                        {
+                            productosBusqueda.Add(producto);
+                        }
+                        else if (producto.Almacen == cbBuscarAlmacen.Text && producto.Descripcion.Contains(txtBuscar.Text))
+                        {
+                            productosBusqueda.Add(producto);
+                        }
+                    }
+                    dgvProductos.DataSource = productosBusqueda;
+                }
+            //}
+            //else
+            //{
+            //    CargarDatosProductos();
+            //}
+        }
+
+        private void btnLimpiarBuscar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = string.Empty;
+            CargarDatosProductos();
         }
     }
 }

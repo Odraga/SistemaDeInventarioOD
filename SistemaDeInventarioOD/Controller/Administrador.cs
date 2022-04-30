@@ -37,6 +37,15 @@ namespace SistemaDeInventarioOD.Controller
             return productos;
         }
 
+        public List<Almacen> VerAlmacenes()
+        {
+            List<Almacen> almacenes = new List<Almacen>();
+
+            almacenes = TraerAlmacenes();
+
+            return almacenes;
+        }
+
         public string NuevoCliente(Cliente cliente)
         {
             string Mensaje;
@@ -82,6 +91,32 @@ namespace SistemaDeInventarioOD.Controller
                 else
                 {
                     Mensaje = "Se agrego el nuevo proveedor con exito!";
+                }
+
+            }
+
+            return Mensaje;
+        }
+
+        public string NuevoProducto(Producto producto)
+        {
+            string Mensaje;
+
+            if (string.IsNullOrEmpty(producto.Codigo) || string.IsNullOrEmpty(producto.Descripcion) || producto.IdCategoria < 1  || producto.IdAlmacen < 1)
+            {
+                Mensaje = "Oops! hubo un problema al agregar el nuevo Producto!\nVerifique los campos.";
+            }
+            else
+            {
+                int resultado = AgregarProducto(producto);
+
+                if (resultado < 1)
+                {
+                    Mensaje = "Oops! hubo un problema al agregar el nuevo producto!";
+                }
+                else
+                {
+                    Mensaje = "Se agrego el nuevo producto con exito!";
                 }
 
             }

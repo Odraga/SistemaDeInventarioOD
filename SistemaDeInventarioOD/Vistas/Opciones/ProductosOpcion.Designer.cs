@@ -49,7 +49,7 @@ namespace SistemaDeInventarioOD.Resources
             this.cbBuscarPor = new System.Windows.Forms.ComboBox();
             this.cbBuscarCategoria = new System.Windows.Forms.ComboBox();
             this.cbBuscarAlmacen = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiarBuscar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -175,6 +175,7 @@ namespace SistemaDeInventarioOD.Resources
             // 
             this.txtAlmacen.Location = new System.Drawing.Point(3, 134);
             this.txtAlmacen.Name = "txtAlmacen";
+            this.txtAlmacen.ReadOnly = true;
             this.txtAlmacen.Size = new System.Drawing.Size(177, 20);
             this.txtAlmacen.TabIndex = 25;
             // 
@@ -224,7 +225,7 @@ namespace SistemaDeInventarioOD.Resources
             this.flowLayoutPanel3.Controls.Add(this.cbBuscarPor);
             this.flowLayoutPanel3.Controls.Add(this.cbBuscarCategoria);
             this.flowLayoutPanel3.Controls.Add(this.cbBuscarAlmacen);
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.txtBuscar);
             this.flowLayoutPanel3.Controls.Add(this.btnBuscar);
             this.flowLayoutPanel3.Controls.Add(this.btnLimpiarBuscar);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(238, 125);
@@ -275,12 +276,12 @@ namespace SistemaDeInventarioOD.Resources
             this.cbBuscarAlmacen.Size = new System.Drawing.Size(121, 21);
             this.cbBuscarAlmacen.TabIndex = 24;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(456, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtBuscar.Location = new System.Drawing.Point(456, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(218, 20);
+            this.txtBuscar.TabIndex = 20;
             // 
             // btnBuscar
             // 
@@ -293,6 +294,7 @@ namespace SistemaDeInventarioOD.Resources
             this.btnBuscar.Size = new System.Drawing.Size(28, 23);
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiarBuscar
             // 
@@ -305,6 +307,7 @@ namespace SistemaDeInventarioOD.Resources
             this.btnLimpiarBuscar.Size = new System.Drawing.Size(28, 23);
             this.btnLimpiarBuscar.TabIndex = 22;
             this.btnLimpiarBuscar.UseVisualStyleBackColor = false;
+            this.btnLimpiarBuscar.Click += new System.EventHandler(this.btnLimpiarBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -354,6 +357,7 @@ namespace SistemaDeInventarioOD.Resources
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscarAlmacen
             // 
@@ -395,6 +399,8 @@ namespace SistemaDeInventarioOD.Resources
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1024, 600);
+            this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "ProductosOpcion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
@@ -434,7 +440,7 @@ namespace SistemaDeInventarioOD.Resources
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbBuscarPor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiarBuscar;
         private System.Windows.Forms.TextBox txtAlmacen;

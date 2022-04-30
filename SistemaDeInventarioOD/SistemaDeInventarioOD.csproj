@@ -323,5 +323,26 @@
   <ItemGroup>
     <None Include="Resources\mas %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-cart %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-cart %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-cart %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signo-de-mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -112,6 +112,36 @@ namespace SistemaDeInventarioOD.Datos
             return productos;
         }
 
+        protected List<Almacen> TraerAlmacenes()
+        {
+            MySqlDataReader reader;
+
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            conn.Open();
+
+            string query = "SELECT * FROM almacen;";
+
+            MySqlCommand comando = new MySqlCommand(query, conn);
+
+            reader = comando.ExecuteReader();
+
+            List<Almacen> almacenes = new List<Almacen>();
+
+            while (reader.Read())
+            {
+                almacenes.Add(new Almacen()
+                {
+                    IdAlmacen = (int)reader["id_almacen"],
+                    nombre_almacen = reader["nombre_almacen"].ToString()
+                });
+            }
+
+            conn.Close();
+
+            return almacenes;
+        }
+
         protected int AgregarCliente(Cliente cliente)
         {
             MySqlConnection conn = new MySqlConnection(conexion);
@@ -150,6 +180,28 @@ namespace SistemaDeInventarioOD.Datos
             comando.Parameters.AddWithValue("@telefono", proveedor.Telefono);
             comando.Parameters.AddWithValue("@direccion", proveedor.Direccion);
             comando.Parameters.AddWithValue("@correo", proveedor.Correo);
+
+            int resultado = comando.ExecuteNonQuery();
+
+            conn.Close();
+
+            return resultado;
+        }
+
+        protected int AgregarProducto(Producto producto)
+        {
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            conn.Open();
+
+            string query = "INSERT INTO producto (id_categoria, id_almacen, codigo, descripcion) VALUE (@idCategoria, @idAlmacen, @codigo, @descripcion);";
+
+            MySqlCommand comando = new MySqlCommand(query, conn);
+
+            comando.Parameters.AddWithValue("@idCategoria", producto.IdCategoria);
+            comando.Parameters.AddWithValue("@idAlmacen", producto.IdAlmacen);
+            comando.Parameters.AddWithValue("@codigo", producto.Codigo);
+            comando.Parameters.AddWithValue("@descripcion", producto.Descripcion);
 
             int resultado = comando.ExecuteNonQuery();
 
