@@ -47,6 +47,7 @@ namespace SistemaDeInventarioOD
         private void btnCompras_Click(object sender, EventArgs e)
         {
             ComprasOpcion comprasOpcion = new ComprasOpcion();
+            comprasOpcion.DatosUsuario(usuario);
             comprasOpcion.ShowDialog();
         }
 
@@ -91,6 +92,12 @@ namespace SistemaDeInventarioOD
         {
             VentasOpcion ventasOpcion = new VentasOpcion();
             ventasOpcion.ShowDialog();
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            ConfiguracionOpcion configuracionOpcion = new ConfiguracionOpcion();
+            configuracionOpcion.ShowDialog();
         }
     }
 }

@@ -31,6 +31,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
         {
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNroDocumento = new System.Windows.Forms.Label();
@@ -42,25 +43,32 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.txtDocProveedor = new System.Windows.Forms.TextBox();
             this.lblNombreProveedor = new System.Windows.Forms.Label();
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCodigoProducto = new System.Windows.Forms.Label();
             this.txtCodigoProducto = new System.Windows.Forms.TextBox();
             this.lblDescripcionProducto = new System.Windows.Forms.Label();
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
+            this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblPrecioCompra = new System.Windows.Forms.Label();
             this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.nUDCantidadProductos = new System.Windows.Forms.NumericUpDown();
             this.lblCantidadProductos = new System.Windows.Forms.Label();
+            this.nUDCantidadProductos = new System.Windows.Forms.NumericUpDown();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalNumero = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.btnVolverMenu = new System.Windows.Forms.Button();
-            this.btnBuscarProveedor = new System.Windows.Forms.Button();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -93,11 +101,36 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.lblTitulo.Text = "Compras";
             this.lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
             // 
+            // btnVolverMenu
+            // 
+            this.btnVolverMenu.BackColor = System.Drawing.Color.Navy;
+            this.btnVolverMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVolverMenu.Image = global::SistemaDeInventarioOD.Properties.Resources.previous;
+            this.btnVolverMenu.Location = new System.Drawing.Point(14, 13);
+            this.btnVolverMenu.Name = "btnVolverMenu";
+            this.btnVolverMenu.Size = new System.Drawing.Size(64, 64);
+            this.btnVolverMenu.TabIndex = 5;
+            this.btnVolverMenu.UseVisualStyleBackColor = false;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
+            // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column7,
+            this.Column8,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.dgvProductos.Location = new System.Drawing.Point(13, 239);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(999, 264);
             this.dgvProductos.TabIndex = 12;
             // 
@@ -201,6 +234,19 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.txtNombreProveedor.Size = new System.Drawing.Size(218, 20);
             this.txtNombreProveedor.TabIndex = 22;
             // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarProveedor.Image = global::SistemaDeInventarioOD.Properties.Resources.mas__1_;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(679, 3);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(28, 23);
+            this.btnBuscarProveedor.TabIndex = 25;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
+            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
+            // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -252,6 +298,19 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.txtDescripcionProducto.Size = new System.Drawing.Size(218, 20);
             this.txtDescripcionProducto.TabIndex = 22;
             // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarProducto.Image = global::SistemaDeInventarioOD.Properties.Resources.mas__1_;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(701, 3);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(28, 23);
+            this.btnBuscarProducto.TabIndex = 25;
+            this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -302,13 +361,6 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.txtPrecioVenta.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioVenta.TabIndex = 22;
             // 
-            // nUDCantidadProductos
-            // 
-            this.nUDCantidadProductos.Location = new System.Drawing.Point(532, 3);
-            this.nUDCantidadProductos.Name = "nUDCantidadProductos";
-            this.nUDCantidadProductos.Size = new System.Drawing.Size(100, 20);
-            this.nUDCantidadProductos.TabIndex = 23;
-            // 
             // lblCantidadProductos
             // 
             this.lblCantidadProductos.AutoSize = true;
@@ -319,6 +371,13 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.lblCantidadProductos.Size = new System.Drawing.Size(122, 13);
             this.lblCantidadProductos.TabIndex = 24;
             this.lblCantidadProductos.Text = "Cantidad Productos:";
+            // 
+            // nUDCantidadProductos
+            // 
+            this.nUDCantidadProductos.Location = new System.Drawing.Point(532, 3);
+            this.nUDCantidadProductos.Name = "nUDCantidadProductos";
+            this.nUDCantidadProductos.Size = new System.Drawing.Size(100, 20);
+            this.nUDCantidadProductos.TabIndex = 23;
             // 
             // lblTotal
             // 
@@ -342,21 +401,22 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.lblTotalNumero.TabIndex = 28;
             this.lblTotalNumero.Text = "0.00";
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Image = global::SistemaDeInventarioOD.Properties.Resources.add;
-            this.button1.Location = new System.Drawing.Point(760, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(252, 138);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "AGREGAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAgregar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAgregar.Image = global::SistemaDeInventarioOD.Properties.Resources.add;
+            this.btnAgregar.Location = new System.Drawing.Point(760, 95);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(252, 138);
+            this.btnAgregar.TabIndex = 29;
+            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnGuardar
             // 
@@ -373,43 +433,55 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.btnGuardar.Text = "¡COMPRAR!";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnBuscarProducto
+            // Column7
             // 
-            this.btnBuscarProducto.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarProducto.Image = global::SistemaDeInventarioOD.Properties.Resources.mas__1_;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(701, 3);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(28, 23);
-            this.btnBuscarProducto.TabIndex = 25;
-            this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.Column7.HeaderText = "Numero Documento";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
-            // btnVolverMenu
+            // Column8
             // 
-            this.btnVolverMenu.BackColor = System.Drawing.Color.Navy;
-            this.btnVolverMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVolverMenu.Image = global::SistemaDeInventarioOD.Properties.Resources.previous;
-            this.btnVolverMenu.Location = new System.Drawing.Point(14, 13);
-            this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(64, 64);
-            this.btnVolverMenu.TabIndex = 5;
-            this.btnVolverMenu.UseVisualStyleBackColor = false;
-            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
+            this.Column8.HeaderText = "Fecha Registro";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
-            // btnBuscarProveedor
+            // Column1
             // 
-            this.btnBuscarProveedor.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarProveedor.Image = global::SistemaDeInventarioOD.Properties.Resources.mas__1_;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(679, 3);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(28, 23);
-            this.btnBuscarProveedor.TabIndex = 25;
-            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
+            this.Column1.HeaderText = "Proveedor";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Producto";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Precio Compra";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Precio Venta";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Cantidad Productos";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Precio Total";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // ComprasOpcion
             // 
@@ -417,7 +489,7 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblTotalNumero);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnGuardar);
@@ -484,6 +556,14 @@ namespace SistemaDeInventarioOD.Vistas.Opciones
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalNumero;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

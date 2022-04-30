@@ -124,5 +124,23 @@ namespace SistemaDeInventarioOD.Controller
             return Mensaje;
         }
 
+        public string NuevaCompra(List<FacturaCompra> facturaCompras)
+        {
+            string Mensaje;
+
+            int resultado = AgregarCompra(facturaCompras);
+
+            if (resultado < 1)
+            {
+                Mensaje = "Oops! hubo un problema al agregar la nueva compra!";
+            }
+            else
+            {
+                Mensaje = "Se agrego la nueva compra con exito!";
+            }
+
+            return Mensaje;
+        }
+
     }
 }

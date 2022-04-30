@@ -104,6 +104,7 @@
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\FacturaCompra.cs" />
     <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
@@ -164,6 +165,18 @@
     <Compile Include="Vistas\Opciones\Secundarias\BuscarAlmacenSecundaria.Designer.cs">
       <DependentUpon>BuscarAlmacenSecundaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Opciones\Secundarias\BuscarProductoSecundaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\Secundarias\BuscarProductoSecundaria.Designer.cs">
+      <DependentUpon>BuscarProductoSecundaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Opciones\Secundarias\BuscarProveedorSecundaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Opciones\Secundarias\BuscarProveedorSecundaria.Designer.cs">
+      <DependentUpon>BuscarProveedorSecundaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Opciones\VentasOpcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +222,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Opciones\Secundarias\BuscarAlmacenSecundaria.resx">
       <DependentUpon>BuscarAlmacenSecundaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\Secundarias\BuscarProductoSecundaria.resx">
+      <DependentUpon>BuscarProductoSecundaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Opciones\Secundarias\BuscarProveedorSecundaria.resx">
+      <DependentUpon>BuscarProveedorSecundaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Opciones\VentasOpcion.resx">
       <DependentUpon>VentasOpcion.cs</DependentUpon>

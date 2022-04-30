@@ -17,8 +17,6 @@ namespace SistemaDeInventarioOD.Vistas.Opciones.Secundarias
         List<Almacen> almacenes = new List<Almacen>();
         List<Almacen> almacenesBusqueda = new List<Almacen>();
 
-        Almacen almacen = new Almacen();
-
         public BuscarAlmacenSecundaria()
         {
             InitializeComponent();

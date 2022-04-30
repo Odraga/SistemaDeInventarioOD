@@ -210,5 +210,36 @@ namespace SistemaDeInventarioOD.Datos
             return resultado;
         }
 
+        protected int AgregarCompra(List<FacturaCompra> facturaCompras)
+        {
+            int resultado = 0;
+
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            conn.Open();
+
+            string query = "INSERT INTO compras (id_proveedor, id_producto, nro_documento, fecha_registro, precio_compra, precio_venta, cantidad_productos, sub_total)"+
+                "VALUE(@idProveedor, @idProducto, @nroDocumento, @fechaRegistro, @precioCompra, @precioVenta, @cantidadProductos, @subTotal);";
+
+            foreach (var factura in facturaCompras)
+            {
+                MySqlCommand comando = new MySqlCommand(query, conn);
+
+                comando.Parameters.AddWithValue("@idProveedor", factura.IdProveedor);
+                comando.Parameters.AddWithValue("@idProducto", factura.IdProducto);
+                comando.Parameters.AddWithValue("@nroDocumento", factura.NroDocumento);
+                comando.Parameters.AddWithValue("@fechaRegistro", factura.FechaRegistro);
+                comando.Parameters.AddWithValue("@precioCompra", factura.PrecioCompra);
+                comando.Parameters.AddWithValue("@precioVenta", factura.PrecioVenta);
+                comando.Parameters.AddWithValue("@cantidadProductos", factura.CantidadProductos);
+                comando.Parameters.AddWithValue("@subTotal", factura.PrecioTotal);
+
+                resultado = comando.ExecuteNonQuery();
+            }
+
+            conn.Close();
+
+            return resultado;
+        }
     }
 }
